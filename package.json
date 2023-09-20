@@ -1,0 +1,11 @@
+{
+  "name": "line-fm-transfer",
+  "version": "1.0.0",
+  "description": "This package is used for transfer Line Flex Message Json object to HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
