@@ -17,7 +17,7 @@ function testFunc({ testParams }) {
   // divElement.appendChild(pElement);
   // console.log({ divElement });
   // return divElement;
-  return `<div><h1>${title}</h1><h3>${subTitle}</h3><p>${description}</p></div>`;
+  return `<div><h1 class="title-main">${title}</h1><h3 class="title-sub">${subTitle}</h3><p class="description-text">${description}</p></div>`;
 }
 
 export default testFunc;
