@@ -14,6 +14,7 @@ function testFunc({ testParams }) {
   // Append h1 and p elements to the div
   divElement.appendChild(h1Element);
   divElement.appendChild(pElement);
+  console.log({ divElement });
   return divElement;
 }
 
