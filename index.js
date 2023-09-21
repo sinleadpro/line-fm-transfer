@@ -1,4 +1,4 @@
-function testFunc({ testParams }: { testParams: string }) {
+function testFunc({ testParams }) {
   console.log({ testParams });
 }
 
