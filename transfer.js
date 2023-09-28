@@ -36,6 +36,9 @@ function bubble_object(json) {
     layout,
     layout1,
     layout2 = "";
+  if (!hero) {
+    box = "<div></div>";
+  }
   if (hero?.type === "video") {
     box = hero_box_video(hero);
   } else if (hero?.type === "image") {
@@ -654,7 +657,7 @@ function image_object(json) {
     exb,
     exl,
     exr = "";
-  let styleimg = `background-image:url('${url}');`;
+  let styleimg = `background-image:url('${url || ""}');`;
   if (backgroundColor) {
     styleimg += `background-color:${backgroundColor} !important;`;
   }
