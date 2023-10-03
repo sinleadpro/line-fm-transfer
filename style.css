@@ -15,14 +15,14 @@
 
 @charset "UTF-8";
 .chatbox * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0 solid transparent;
-  font-size: 100%;
-  font-weight: normal;
-  font-style: normal;
-  list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+    list-style: none;
 }
 .chatbox *::after,
 .chatbox *::before {
@@ -107,7 +107,8 @@ strong {
 .LySlider .lyInner {
   display: -webkit-box;
   display: flex;
-  width: 100%;
+  /* here needs to be set 100% when the type isn't "text" */
+  width: fit-content !important;
 }
 .LySlider .lyInner::after {
   -webkit-box-flex: 0;
@@ -2644,4 +2645,12 @@ strong {
 }
 .ExTxtDecLt {
   text-decoration: line-through !important;
+}
+.PText {
+    padding: 5px 0 5px 12px;
+    margin-left: 10px;
+    width: 300px !important;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 17px;
 }

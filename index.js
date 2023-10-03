@@ -1,5 +1,28 @@
 import { flex2html } from "./transfer.js";
 
+let testTextJsonPlain = {
+  // type: "bubble", // 1
+  // body: {
+  // 2
+  type: "text", // 3
+  text: "hello world, text content!",
+  // },
+};
+let testTextJsonBubble = {
+  type: "bubble",
+  body: {
+    type: "box",
+    layout: "vertical",
+    contents: [
+      {
+        type: "text",
+        text: "Hello, World!",
+        size: "lg",
+        weight: "bold",
+      },
+    ],
+  },
+};
 let testFmJson = {
   type: "bubble",
   // hero: {
@@ -242,6 +265,6 @@ function lineJsonDecorator(json) {
 //   },
 // });
 
-flex2html("flex1", lineJsonDecorator(testFmJson));
+flex2html("flex1", lineJsonDecorator(testTextJsonPlain));
 
 export default testFunc;

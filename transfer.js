@@ -7,6 +7,10 @@ export function flex2html(element, json) {
     if (json["type"] === "bubble") {
       result = bubble_object(json);
       carousel = carousel.replace("<!-- inner -->", result);
+    } else if (json["type"] === "text") {
+      result = convert_text_object(json);
+      console.log({ textResult: result });
+      carousel = carousel.replace("<!-- inner -->", result);
     } else if (json["type"] === "carousel") {
       json["contents"].forEach((obj, index) => {
         let result = bubble_object(obj);
@@ -1007,6 +1011,12 @@ function text_object(json) {
   text = !text ? "" : text;
   return `<div class="MdTxt ${fl} ${exabs} ${exmgn} ${alg} ${grv} ${size} ${ExWB} ${ExFntSty} ${ExTxtDec} ${ExWrap} ${ext} ${exb} ${exl} ${exr}" style="${style2}"><p>${text}<!-- content --></p></div>`;
 }
+
+function convert_text_object(json) {
+  const { text } = json;
+  return `<div class="MdTxt PText">${text}</div>`;
+}
+
 function upper1digit(str) {
   return str.charAt(0).toUpperCase();
 }
