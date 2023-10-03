@@ -108,8 +108,15 @@ strong {
   display: -webkit-box;
   display: flex;
   /* here needs to be set 100% when the type isn't "text" */
-  width: fit-content !important;
+  width: 100%;
 }
+.LySlider .lyInner.PTextContainer {
+    display: -webkit-box;
+    display: flex;
+    padding-left: 7px;
+    /* here needs to be set 100% when the type isn't "text" */
+    width: fit-content;
+  }
 .LySlider .lyInner::after {
   -webkit-box-flex: 0;
   flex: none;
@@ -2647,8 +2654,7 @@ strong {
   text-decoration: line-through !important;
 }
 .PText {
-    padding: 5px 0 5px 12px;
-    margin-left: 10px;
+    padding: 5px 20px 5px 20px;
     width: 300px !important;
     height: fit-content;
     background-color: #ffffff;

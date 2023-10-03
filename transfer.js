@@ -1,5 +1,6 @@
 export function flex2html(element, json) {
   let carousel = carousel_struc();
+  let text_container = text_struc();
   let result = "";
 
   if (json["type"] === "flex") {
@@ -10,7 +11,7 @@ export function flex2html(element, json) {
     } else if (json["type"] === "text") {
       result = convert_text_object(json);
       console.log({ textResult: result });
-      carousel = carousel.replace("<!-- inner -->", result);
+      text_container = text_container.replace("<!-- inner -->", result);
     } else if (json["type"] === "carousel") {
       json["contents"].forEach((obj, index) => {
         let result = bubble_object(obj);
@@ -23,9 +24,15 @@ export function flex2html(element, json) {
       });
     }
   }
-  console.log({ carousel });
-  document.getElementById(element).innerHTML += carousel;
-  return carousel;
+  console.log({ carousel, text_container });
+
+  if (json["type"] === "text") {
+    document.getElementById(element).innerHTML += text_container;
+    return;
+  } else {
+    document.getElementById(element).innerHTML += carousel;
+    return carousel;
+  }
 }
 
 function bubble_object(json) {
@@ -835,6 +842,10 @@ function span_object(json) {
 }
 function carousel_struc() {
   return `<div class="LySlider"><div class="lyInner"><!-- inner --></div></div><br>`;
+}
+
+function text_struc() {
+  return `<div class="LySlider"><div class="lyInner PTextContainer"><!-- inner --></div></div><br>`;
 }
 
 function bubble_struc(json) {
