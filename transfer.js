@@ -10,7 +10,6 @@ export function flex2html(element, json) {
       carousel = carousel.replace("<!-- inner -->", result);
     } else if (json["type"] === "text") {
       result = convert_text_object(json);
-      console.log({ textResult: result });
       text_container = text_container.replace("<!-- inner -->", result);
     } else if (json["type"] === "carousel") {
       json["contents"].forEach((obj, index) => {
@@ -27,10 +26,10 @@ export function flex2html(element, json) {
   console.log({ carousel, text_container });
 
   if (json["type"] === "text") {
-    document.getElementById(element).innerHTML += text_container;
-    return;
+    // document.getElementById(element).innerHTML += text_container;
+    return text_container;
   } else {
-    document.getElementById(element).innerHTML += carousel;
+    // document.getElementById(element).innerHTML += carousel;
     return carousel;
   }
 }
