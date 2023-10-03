@@ -304,4 +304,4 @@ flex2html("flex2", {
   },
 });
 
-export default { flex2html, lineJsonDecorator };
+export { flex2html, lineJsonDecorator };
