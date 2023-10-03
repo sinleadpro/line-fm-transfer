@@ -304,4 +304,4 @@ flex2html("flex2", {
   },
 });
 
-export default testFunc;
+export default { flex2html, lineJsonDecorator };
