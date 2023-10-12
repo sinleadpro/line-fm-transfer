@@ -142,11 +142,6 @@ let imgJson = {
   },
 };
 
-function testFunc({ testParams }) {
-  const { title, subTitle, description } = testParams;
-  return `<div><h1 class="title-main">${title}</h1><h3 class="title-sub">${subTitle}</h3><p class="description-text">${description}</p></div>`;
-}
-
 function lineJsonDecorator(json) {
   return {
     type: "flex",
@@ -155,15 +150,15 @@ function lineJsonDecorator(json) {
   };
 }
 
-flex2html("flex1", lineJsonDecorator(testTextJsonBubble));
-flex2html("flex1", lineJsonDecorator(imgJson));
-flex2html("flex1", lineJsonDecorator(testTextJsonPlain));
-flex2html("flex1", lineJsonDecorator(testTextJsonPlain1));
-flex2html("flex1", lineJsonDecorator(testTextJsonPlain2));
-flex2html("flex1", lineJsonDecorator(testTextJsonPlain3));
-flex2html("flex1", lineJsonDecorator(testTextJsonPlain4));
-flex2html("flex1", lineJsonDecorator(testFmJson));
-flex2html("flex2", {
+flex2html(lineJsonDecorator(testTextJsonBubble));
+flex2html(lineJsonDecorator(imgJson));
+flex2html(lineJsonDecorator(testTextJsonPlain));
+flex2html(lineJsonDecorator(testTextJsonPlain1));
+flex2html(lineJsonDecorator(testTextJsonPlain2));
+flex2html(lineJsonDecorator(testTextJsonPlain3));
+flex2html(lineJsonDecorator(testTextJsonPlain4));
+flex2html(lineJsonDecorator(testFmJson));
+flex2html({
   type: "flex",
   altText: "Flex Message",
   contents: {
@@ -304,4 +299,7 @@ flex2html("flex2", {
   },
 });
 
-export { flex2html, lineJsonDecorator };
+function fmTransfer(json) {
+  return flex2html(lineJsonDecorator(json));
+}
+export { fmTransfer };

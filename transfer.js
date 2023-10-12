@@ -1,4 +1,4 @@
-export function flex2html(element, json) {
+export function flex2html(json) {
   let carousel = carousel_struc();
   let text_container = text_struc();
   let result = "";
