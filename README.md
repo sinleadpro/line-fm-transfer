@@ -15,7 +15,7 @@ This tool is used for transfer Line Flex Message to html
 -----------------------------
 ## 使用方式：
 ### JS API:
-- `flex2html`:
+- `fmTransfer`:
   用來將 Line 的 Flex Message JSON Object 輸出成 html 的格式，依照目前的需求，主要會區分成 `text`、`bubble` 2 種類別。
   使用範例：
   1. Bubble Type (Text in Flex Message)
@@ -67,5 +67,3 @@ This tool is used for transfer Line Flex Message to html
   // usage:
   flex2html("flex1", lineJsonDecorator(testTextJsonBubble));
   ```
-- `lineJsonDecorator`:
-  flex2html function 需要我們的 Line FM Json 物件外面再多包一層 flex type，此 function 用來將 input 再多包一層以符合 `flex2html` 參數格式
