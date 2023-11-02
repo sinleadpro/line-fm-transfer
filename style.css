@@ -110,14 +110,23 @@ strong {
   /* here needs to be set 100% when the type isn't "text" */
   width: 100%;
 }
-.LySlider .lyInner .PTextContainer {
+.LySlider .lyInner.PTextContainer {
     display: -webkit-box;
     display: flex;
-    padding-left: 7px;
+    margin-left: 7px;
     /* here needs to be set 100% when the type isn't "text" */
     width: fit-content;
-  }
-.LySlider .lyInner::after {
+    max-width: 80%;
+}
+.PText {
+  padding: 5px 20px 5px 20px;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 17px;
+}
+
+/* disable for pure text layout */
+/* .LySlider .lyInner::after {
   -webkit-box-flex: 0;
   flex: none;
   content: "";
@@ -125,6 +134,7 @@ strong {
   width: 7px;
   height: 1px;
 }
+*/
 .LySlider .lyItem {
   -webkit-box-flex: 0;
   flex: none;
@@ -1389,11 +1399,4 @@ strong {
 }
 .ExTxtDecLt {
   text-decoration: line-through !important;
-}
-.PText {
-    padding: 5px 20px 5px 20px;
-    width: 300px !important;
-    height: fit-content;
-    background-color: #ffffff;
-    border-radius: 17px;
 }
