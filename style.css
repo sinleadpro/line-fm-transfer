@@ -123,6 +123,7 @@ strong {
   height: fit-content;
   background-color: #ffffff;
   border-radius: 17px;
+  word-wrap: break-word;
 }
 
 /* disable for pure text layout */
