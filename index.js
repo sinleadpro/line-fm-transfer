@@ -300,7 +300,6 @@ flex2html({
 });
 
 function fmTransfer(json) {
-  console.log('Hello!!!')
   return flex2html(lineJsonDecorator(json));
 }
 export { fmTransfer };

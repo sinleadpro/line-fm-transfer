@@ -23,7 +23,6 @@ export function flex2html(json) {
       });
     }
   }
-  console.log({ carousel, text_container });
 
   if (json["type"] === "text") {
     // document.getElementById(element).innerHTML += text_container;
