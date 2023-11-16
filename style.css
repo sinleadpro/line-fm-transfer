@@ -126,8 +126,8 @@ strong {
   word-wrap: break-word;
 }
 
-.MdTxt .PText p {
-  white-space: normal;
+.PText p {
+  white-space: normal !important;
 }
 /* disable for pure text layout */
 /* .LySlider .lyInner::after {
