@@ -1021,15 +1021,50 @@ function text_object(json) {
   return `<div class="MdTxt ${fl} ${exabs} ${exmgn} ${alg} ${grv} ${size} ${ExWB} ${ExFntSty} ${ExTxtDec} ${ExWrap} ${ext} ${exb} ${exl} ${exr}" style="${style2}"><p>${text}<!-- content --></p></div>`;
 }
 
+const linkRegexp = new RegExp(
+  '(?:^|\\b)(https?://(?:(?!https)\\S)+)(?=\\s|$)(?!\\S)',
+  'g',
+);
+
+function htmlTagConvertor(text) {
+  const linksFound = text.match(linkRegexp);
+
+  if (!linksFound) {
+    return `<p>${text}</p>`;
+  }
+
+  const htmlSegments = [];
+
+  linksFound.forEach((link) => {
+    const [t1, ...t2] = text.split(link);
+    htmlSegments.push(t1);
+    text = t2.join(link);
+    htmlSegments.push(`<a href="${link}" target="_blank">${link}</a>`);
+  });
+
+  htmlSegments.push(text);
+  return `<p>${htmlSegments.join('')}</p>`;
+};
+
+function formatTextWithHTML(text) {
+  const lines = text.split(/\n/);
+  let formattedText = '';
+
+  lines.forEach(line => {
+    if (line === '') {
+      formattedText += '<br>';
+      return;
+    }
+    formattedText += htmlTagConvertor(line);
+  });
+
+  return formattedText;
+};
+
 function convert_text_object(json) {
   const { text } = json;
-  const linkRegexp = new RegExp(
-    '(?:^|\\b)(https?://(?:(?!https)\\S)+)(?=\\s|$)(?!\\S)',
-    'g',
-  );
-  const textWithLink = text.replace(linkRegexp, '<a href="$1" target="_blank">$1</a>');
-  const textWithLineBreak = textWithLink.replace(/\n/g, '<br>');
-  return `<div class="MdTxt PText">${textWithLineBreak}</div>`;
+  const formattedText = formatTextWithHTML(text);
+  return `<div class="MdTxt PText">${formattedText}</div>`;
 }
 
 function upper1digit(str) {
