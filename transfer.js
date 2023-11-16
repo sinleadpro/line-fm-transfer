@@ -1023,7 +1023,13 @@ function text_object(json) {
 
 function convert_text_object(json) {
   const { text } = json;
-  return `<div class="MdTxt PText">${text}</div>`;
+  const linkRegexp = new RegExp(
+    '(?:^|\\b)(https?://(?:(?!https)\\S)+)(?=\\s|$)(?!\\S)',
+    'g',
+  );
+  const textWithLink = text.replace(linkRegexp, '<a href="$1" target="_blank">$1</a>');
+  const textWithLineBreak = textWithLink.replace(/\n/g, '<br>');
+  return `<div class="MdTxt PText">${textWithLineBreak}</div>`;
 }
 
 function upper1digit(str) {
