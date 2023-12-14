@@ -46,9 +46,9 @@ function bubble_object(json) {
   if (!hero) {
     box = "<div></div>";
   }
-  if (hero?.type === "video") {
+  if ((hero === null || hero === void 0 ? void 0 : hero.type) === "video") {
     box = hero_box_video(hero);
-  } else if (hero?.type === "image") {
+  } else if ((hero === null || hero === void 0 ? void 0 : hero.type) === "image") {
     box = convert_object("", hero);
   } else {
     for (let key in hero) {
@@ -106,10 +106,10 @@ function bubble_object(json) {
   return bubble;
 }
 function hero_box_video(hero) {
-  return `<div class="ExCover MdImg ExFull"><div><video width="100%" poster="${hero?.previewUrl}" controls>
-    <source src="${hero?.url}" type="video/mp4">
-    <source src="${hero?.url}" type="video/ogg">
-    <source src="${hero?.url}" type="video/webm">
+  return `<div class="ExCover MdImg ExFull"><div><video width="100%" poster="${hero === null || hero === void 0 ? void 0 : hero.previewUrl}" controls>
+    <source src="${hero === null || hero === void 0 ? void 0 : hero.url}" type="video/mp4">
+    <source src="${hero === null || hero === void 0 ? void 0 : hero.url}" type="video/ogg">
+    <source src="${hero === null || hero === void 0 ? void 0 : hero.url}" type="video/webm">
  </video></div></div>`;
 }
 function box_recursive(parent_box, layout, json) {

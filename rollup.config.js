@@ -29,6 +29,7 @@ const config = [
       commonjs(),
       nodePolyfills(),
       babel({
+        plugins: ["@babel/plugin-transform-optional-chaining"],
         exclude: "node_modules/**",
       }),
       postcss(),
