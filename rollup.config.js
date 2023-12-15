@@ -7,7 +7,6 @@ import nodePolyfills from "rollup-plugin-polyfill-node";
 const config = [
   {
     input: ["./index.js"],
-    // external: ["style.css"],
     output: [
       {
         file: "build/index.cjs.js",
@@ -32,7 +31,7 @@ const config = [
         plugins: ["@babel/plugin-transform-optional-chaining"],
         exclude: "node_modules/**",
       }),
-      postcss({ extract: true }),
+      postcss(),
     ],
   },
 ];
