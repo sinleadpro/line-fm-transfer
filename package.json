@@ -5,10 +5,15 @@
   "module": "build/index.esm.js",
   "type": "module",
   "exports": {
-    "import": "./build/index.esm.js",
-    "require": "./build/index.cjs.js"
+    ".": {
+      "import": "./build/index.esm.js",
+      "require": "./build/index.cjs.js"
+    },
+    "./*.css": {
+      "import": "./*.css",
+      "require": "./*.css"
+    }
   },
-  "style": "./build/style.css",
   "version": "1.1.0",
   "files": [
     "index.js",
