@@ -7,7 +7,7 @@ import nodePolyfills from "rollup-plugin-polyfill-node";
 const config = [
   {
     input: ["./index.js"],
-    external: ["style.css"],
+    // external: ["style.css"],
     output: [
       {
         file: "build/index.cjs.js",
