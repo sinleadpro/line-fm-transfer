@@ -32,7 +32,7 @@ const config = [
         plugins: ["@babel/plugin-transform-optional-chaining"],
         exclude: "node_modules/**",
       }),
-      postcss({ extract: true }),
+      postcss({ extract: "build/style.css" }),
     ],
   },
 ];
