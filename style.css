@@ -68,7 +68,7 @@
 *::before {
   box-sizing: inherit;
 }
-body,
+/* body,
 html {
   background-color: transparent;
 }
@@ -80,7 +80,7 @@ body {
   font-size: 16px;
   -webkit-user-select: none;
   -webkit-text-size-adjust: none;
-}
+} */
 a {
   -webkit-touch-callout: none;
 }
